@@ -251,4 +251,7 @@ window.flags = {
 	'QA' : 'Qatar',
 	'MZ' : 'Mozambique',
 	'XX' : 'Unknown',
+	'01' : "USSR",
+	'02' : "Germany 1943",
+	'03' : "Millennium School"
 }

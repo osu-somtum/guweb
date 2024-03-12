@@ -1,3 +1,23 @@
+<!-- HTML Meta Tags -->
+<meta name="description" content="Log onto somtum - somtom.fun osu!bancho">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Login - somtum">
+<meta itemprop="description" content="Log onto somtum - somtom.fun osu!bancho">
+<meta itemprop="image" content="http://{{ domain() }}/static/favicon/android-chrome-256x256.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://{{ domain() }}/login">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Login - somtum">
+<meta property="og:description" content="Log onto somtum - somtom.fun osu!bancho">
+<meta property="og:image" content="http://{{ domain() }}/static/favicon/android-chrome-256x256.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="Login - somtum">
+<meta name="twitter:description" content="Log onto somtum - somtom.fun osu!bancho">
+<meta name="twitter:image" content="http://{{ domain() }}/static/favicon/android-chrome-256x256.png">
+
 {% extends "base.html" %}
 {% block title %} Login {% endblock %}
 
@@ -6,6 +26,12 @@
 {% endblock %}
 
 {% block content %}
+
+<style>
+  .my-con {
+    margin-top: 28.5vh;
+  }
+</style>
 
 <div class="main-block is-marginless is-paddingless is-auth">
   <div class="columns is-reset is-weeb">

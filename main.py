@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.9
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 __all__ = ()
@@ -9,6 +9,7 @@ import aiohttp
 import orjson
 from quart import Quart
 from quart import render_template
+from quart import session
 
 from cmyui.logging import Ansi
 from cmyui.logging import log
@@ -18,12 +19,17 @@ from cmyui.version import Version
 from objects import glob
 
 app = Quart(__name__)
+app.config["PERMANENT_SESSION_LIFETIME"] = 86300000
 
 version = Version(1, 3, 0)
 
 # used to secure session data.
 # we recommend using a long randomly generated ascii string.
 app.secret_key = glob.config.secret_key
+
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
 
 @app.before_serving
 async def mysql_conn() -> None:
